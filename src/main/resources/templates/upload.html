@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Page</title>
+</head>
+<body>
+    <p>Processed Excel file : </p>
+    <a th:href="@{'file://' + ${absoluteFilePath}}" target="_blank">Open File</a>
+
+    <br><br><br><br>
+    <form action="/" method="get">
+        <button type="submit">Process more Excels Sheets</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Excel File</title>
+</head>
+<body>
+    <h1>Upload Excel File</h1>
+    <input type="file" id="fileInput" accept=".xlsx, .xls" required>
+    <button onclick="uploadFile()">Upload</button>
+
+    <script>
+        function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            
+            const formData = new FormData();
+            formData.append('file', file);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle response data as needed
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html> -->

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel in Json</title>
+</head>
+<body>
+    <h1>Upload Excel Sheets</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".xlsx" required>
+        <button type="submit">Upload</button>
+    </form>
+    <div id="output"></div>
+</body>
+</html>
